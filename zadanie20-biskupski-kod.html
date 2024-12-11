@@ -1,0 +1,48 @@
+<textarea rows="22" cols="50">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Obliczanie długości boków trójkąta</title>
+</head>
+<body>
+    <h1>Obliczanie długości boków trójkąta</h1>
+    <form>
+        Punkt A: <input type="number" id="xa_bis" placeholder="xa"> <input type="number" id="ya_bis" placeholder="ya"><br>
+        Punkt B: <input type="number" id="xb_bis" placeholder="xb"> <input type="number" id="yb_bis" placeholder="yb"><br>
+        Punkt C: <input type="number" id="xc_bis" placeholder="xc"> <input type="number" id="yc_bis" placeholder="yc"><br>
+        <button type="button" onclick="obliczDlugosci()">Oblicz długości boków</button>
+    </form>
+    <p id="wyniki"></p>
+
+    <script>
+        function obliczDlugosci() {
+            var xa = parseFloat(document.getElementById("xa_bis").value);
+            var ya = parseFloat(document.getElementById("ya_bis").value);
+            var xb = parseFloat(document.getElementById("xb_bis").value);
+            var yb = parseFloat(document.getElementById("yb_bis").value);
+            var xc = parseFloat(document.getElementById("xc_bis").value);
+            var yc = parseFloat(document.getElementById("yc_bis").value);
+
+            var AB = AB_bis(xa, ya, xb, yb);
+            var BC = BC_bis(xb, yb, xc, yc);
+            var AC = AC_bis(xa, ya, xc, yc);
+
+            document.getElementById("wyniki").innerText = "Długości boków: AB = " + AB + ", BC = " + BC + ", AC = " + AC;
+        }
+
+        function AB_bis(xa, ya, xb, yb) {
+            return Math.sqrt(Math.pow(xb - xa, 2) + Math.pow(yb - ya, 2));
+        }
+
+        function BC_bis(xb, yb, xc, yc) {
+            return Math.sqrt(Math.pow(xc - xb, 2) + Math.pow(yc - yb, 2));
+        }
+
+        function AC_bis(xa, ya, xc, yc) {
+            return Math.sqrt(Math.pow(xc - xa, 2) + Math.pow(yc - ya, 2));
+        }
+    </script>
+</body>
+</html>
+</textarea>
