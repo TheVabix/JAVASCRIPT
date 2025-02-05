@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 17 - Pytania i odpowiedzi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .pytanie {
+      font-weight: bold;
+      text-decoration: underline;
+      margin-top: 20px;
+    }
+    .odp {
+      margin-left: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-left: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  
+  <script>
+    document.write("<p class='pytanie'>1. Wymień cztery sposoby wyprowadzania danych w JS:</p>");
+    document.write("<p class='odp'><b>Odpowiedź:</b> document.write(), alert(), console.log(), innerHTML.</p>");
+    document.write("<p class='pytanie'>2. Czym jest funkcja w JS? Omów przy użyciu 4 podpunktów:</p>");
+    document.write("<div class='odp'><b>Odpowiedź:</b><br>");
+    document.write("<ol>");
+    document.write("<li>Funkcja to blok kodu, który można wywoływać wielokrotnie.</li>");
+    document.write("<li>Może przyjmować argumenty (dane wejściowe).</li>");
+    document.write("<li>Może zwracać wartość, używając słowa kluczowego <i>return</i>.</li>");
+    document.write("<li>Ułatwia modularność i ponowne wykorzystanie kodu.</li>");
+    document.write("</ol></div>");
+    document.write("<p class='pytanie'>3. Omów metody: getElementsByName, getElementById, getElementsByTagName.</p>");
+    document.write("<div class='odp'><b>Odpowiedź:</b><br>");
+    document.write("<table>");
+    document.write("<tr><th>Metoda</th><th>Opis</th></tr>");
+    document.write("<tr><td>getElementById()</td><td>Pobiera pojedynczy element o unikalnym atrybucie id.</td></tr>");
+    document.write("<tr><td>getElementsByName()</td><td>Pobiera kolekcję elementów o danym atrybucie name.</td></tr>");
+    document.write("<tr><td>getElementsByTagName()</td><td>Pobiera kolekcję elementów o określonym tagu, np. <i>p</i>, <i>div</i>, <i>span</i>.</td></tr>");
+    document.write("</table></div>");
+    document.write("<p class='pytanie'>4. Omów właściwości: innerHTML, innerText, className.</p>");
+    document.write("<div class='odp'><b>Odpowiedź:</b><br>");
+    document.write("<p><b>innerHTML:</b> Umożliwia odczyt, modyfikację lub zastąpienie zawartości HTML elementu.</p>");
+    document.write("<p><b>innerText:</b> Umożliwia odczyt lub zmianę tekstowej zawartości elementu, ignorując znaczniki HTML.</p>");
+    document.write("<p><b>className:</b> Służy do odczytu lub ustawiania nazwy klasy CSS przypisanej do elementu.</p>");
+    document.write("</div>");
+  </script>
+</body>
+</html>
