@@ -1,0 +1,40 @@
+<html> 
+  <head> 
+    <script type="text/javascript"> 
+      function Samochod(marka, model, rok, typ, pojemnosc, kolor) {
+        this.marka = marka;
+        this.model = model;
+        this.rok = rok;
+        this.typ = typ;
+        this.pojemnosc = pojemnosc;
+        this.kolor = kolor;
+      }
+      Samochod.prototype.wyswietlbiskupski = function() {
+        document.write("Samochód: " + this.marka + " " + this.model + " (" + this.rok + ")");
+      };
+
+      Samochod.prototype.wypisz = function() {
+        alert('Rok produkcji: ' + this.rok);
+      };
+
+      var samochod = new Samochod('Toyota', 'Corolla', 2020, 'sedan', '1.4', 'czerwony');
+
+      samochod.wyswietlbiskupski();
+      samochod.wypisz();
+    </script> 
+  </head> 
+  <body> 
+    <br> 
+    Programowanie obiektowe. <br> 
+    Obiekt to samochód<br> 
+    Pola:<br> 
+    Marka<br> 
+    Model<br> 
+    Rok<br> 
+    Typ<br>
+    Pojemność: '1.4'<br>
+    Kolor: 'czerwony'<br>
+    Metoda: wyswietlbiskupski<br> 
+    Nowa metoda: wypisz<br>
+  </body> 
+</html>
