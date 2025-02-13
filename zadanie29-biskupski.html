@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 29 – Odpowiedzi na pytania</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    h2 { color: #2a5d84; }
+    p { margin-bottom: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Zadanie 29 – Odpowiedzi na pytania</h1>
+  
+  <h2>1. W jaki sposób można określić właściwość danego obiektu (dwa sposoby wraz z przykładami)?</h2>
+  <p>
+    W JavaScript właściwości obiektu można określić na dwa sposoby:
+    <br><strong>Notacją kropkową:</strong> 
+    <code>obiekt.nazwa = "wartość";</code>
+    <br><strong>Notacją tablicową:</strong> 
+    <code>obiekt["nazwa"] = "wartość";</code>
+    <br>Przykład:
+    <br>
+    <code>
+      var osoba = {}; <br>
+      osoba.imie = "Anna"; <br>
+      osoba["nazwisko"] = "Nowak";
+    </code>
+  </p>
+  
+  <h2>2. W jaki sposób można odwołać się do pól (właściwości) i metod?</h2>
+  <p>
+    Do odwoływania się do pól (właściwości) i metod używamy również notacji kropkowej lub tablicowej. Na przykład:
+    <br>
+    <code>osoba.imie</code> lub <code>osoba["imie"]</code> – odwołanie do pola;
+    <br>
+    <code>osoba.przedstawSie()</code> – wywołanie metody. 
+    <br>Metody definiujemy jako funkcje przypisane do obiektu, a ich wywołanie odbywa się przez dodanie nawiasów.
+  </p>
+  
+  <h2>3. Wymień cechy charakterystyczne konstruktora.</h2>
+  <p>
+    Konstruktor w JavaScript to specjalna funkcja służąca do tworzenia nowych obiektów. 
+    <br><strong>Cechy konstruktora:</strong>
+    <ul>
+      <li>Inicjalizuje nowe właściwości obiektu.</li>
+      <li>Może przyjmować parametry, co pozwala na dynamiczne przypisanie wartości.</li>
+      <li>Wewnątrz konstruktora słowo <code>this</code> odnosi się do nowo tworzonych obiektów.</li>
+      <li>Automatycznie zwraca nowy obiekt, gdy użyjemy słowa kluczowego <code>new</code>.</li>
+    </ul>
+  </p>
+  
+  <h2>4. Konstruowanie obiektu na podstawie przykładu – obiekt ma trzy pola oraz jedną metodę.</h2>
+  <p>
+    Przykładowy konstruktor:
+    <br>
+    <code>
+      function Osoba(imie, nazwisko, wiek) {<br>
+      &nbsp;&nbsp;&nbsp;this.imie = imie;<br>
+      &nbsp;&nbsp;&nbsp;this.nazwisko = nazwisko;<br>
+      &nbsp;&nbsp;&nbsp;this.wiek = wiek;<br>
+      &nbsp;&nbsp;&nbsp;this.przedstawSie = function() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Nazywam się " + this.imie + " " + this.nazwisko + ", mam " + this.wiek + " lat.";<br>
+      &nbsp;&nbsp;&nbsp;}<br>
+      }<br>
+      var osoba1 = new Osoba("Jan", "Kowalski", 30);
+    </code>
+  </p>
+  
+  <h2>5. Znaczenie słowa <code>this</code>. Jak oddzielamy pola oraz metody?</h2>
+  <p>
+    Słowo <code>this</code> odnosi się do bieżącego obiektu, w kontekście którego jest używane – najczęściej w konstruktorach lub metodach. Dzięki niemu możemy odwoływać się do pól oraz metod danego obiektu. 
+    <br>Oddzielenie pól i metod polega na tym, że właściwości (pola) przypisujemy do <code>this</code> (np. <code>this.imie = "Anna";</code>), a metody definiujemy jako funkcje przypisane do <code>this</code> lub dodawane później do prototypu.
+  </p>
+  
+  <h2>6. Konstruktor w JS na podstawie przykładu wraz z opisem.</h2>
+  <p>
+    Przykład konstruktora:
+    <br>
+    <code>
+      function Samochod(marka, model, rok) {<br>
+      &nbsp;&nbsp;&nbsp;this.marka = marka;<br>
+      &nbsp;&nbsp;&nbsp;this.model = model;<br>
+      &nbsp;&nbsp;&nbsp;this.rok = rok;<br>
+      &nbsp;&nbsp;&nbsp;this.wyswietlInfo = function() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this.marka + " " + this.model + ", rok produkcji: " + this.rok;<br>
+      &nbsp;&nbsp;&nbsp;}<br>
+      }<br>
+      var auto = new Samochod("Toyota", "Corolla", 2020);
+    </code>
+    <br>
+    <em>Opis:</em> Funkcja <code>Samochod</code> jest konstruktorem, który tworzy obiekt o trzech polach oraz jednej metodzie. Przy wywołaniu z użyciem słowa kluczowego <code>new</code> tworzony jest nowy obiekt, a <code>this</code> wskazuje na ten nowo utworzony obiekt.
+  </p>
+  
+  <h2>7. Znaczenie słowa kluczowego <code>new</code> wraz z przykładem.</h2>
+  <p>
+    Słowo kluczowe <code>new</code> służy do tworzenia nowej instancji obiektu na podstawie konstruktora. Gdy używamy <code>new</code>, JavaScript:
+    <ul>
+      <li>Tworzy nowy obiekt.</li>
+      <li>Przypisuje <code>this</code> do nowego obiektu w obrębie konstruktora.</li>
+      <li>Automatycznie zwraca nowo utworzony obiekt.</li>
+    </ul>
+    Przykład:
+    <br>
+    <code>var osoba = new Osoba("Anna", "Nowak", 25);</code>
+  </p>
+  
+  <h2>8. Znaczenie słowa kluczowego <code>prototype</code> wraz z przykładem i opisem.</h2>
+  <p>
+    Słowo <strong>prototype</strong> umożliwia dodawanie właściwości i metod do wszystkich instancji danego konstruktora. Dzięki temu metody te są współdzielone przez wszystkie obiekty, co oszczędza pamięć, gdyż nie są kopiowane do każdego nowego obiektu.
+    <br>Przykład:
+    <br>
+    <code>
+      function Student(imie, nazwisko) {<br>
+      &nbsp;&nbsp;&nbsp;this.imie = imie;<br>
+      &nbsp;&nbsp;&nbsp;this.nazwisko = nazwisko;<br>
+      }<br>
+      Student.prototype.przedstawSie = function() {<br>
+      &nbsp;&nbsp;&nbsp;return "Cześć, jestem " + this.imie + " " + this.nazwisko;<br>
+      };<br>
+      var student1 = new Student("Piotr", "Zieliński");
+    </code>
+    <br>
+    <strong>Opis:</strong> <strong>Metoda dodana przez <code>prototype</code> jest współdzielona przez wszystkie instancje konstruktora Student</strong>. Dzięki temu nie definiujemy tej metody wewnątrz konstruktora, co pozwala na oszczędniejsze zarządzanie pamięcią i spójność zachowania obiektów.
+  </p>
+  
+</body>
+</html>
