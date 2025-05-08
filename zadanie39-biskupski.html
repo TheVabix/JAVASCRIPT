@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu kolorów</title>
+  <style>
+    body {
+      background-color: silver;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    p {
+      margin: 2px 0;
+      line-height: 1.2;
+    }
+    input {
+      width: 200px;
+      box-sizing: border-box;
+      margin: 5px 0;
+      padding: 4px;
+    }
+    button {
+      width: 200px;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+  <p style="color: green; font-weight: bold;">Menu</p>
+  <p style="color: red;">1 – Czerwony</p>
+  <p style="color: blue;">2 – Niebieski</p>
+  <input type="text" id="kolorInput" placeholder="Wpisz 1 lub nazwę koloru" >
+  <br>
+  <button type="button" onclick="fun_bis()">Sprawdź</button>
+
+  <script>
+    function fun_bis() {
+      var x = document.getElementById('kolorInput').value;
+      var xLow = x.toLowerCase().trim();
+
+      if (xLow === '1' || xLow === 'czerwony') {
+        document.write('<font color="red" size="7">wczytałeś kolor czerwony</font>');
+      }
+      else if (xLow === '2' || xLow === 'niebieski') {
+        document.write('<font color="blue" size="1">wczytałeś kolor niebieski</font>');
+      }
+      else {
+        document.write('<font color="red" size="3">Niepoprawny wybór</font>');
+      }
+    }
+  </script>
+
+</body>
+</html>
