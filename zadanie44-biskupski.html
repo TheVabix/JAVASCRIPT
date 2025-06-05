@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Imię i nazwisko na przemian</title>
+</head>
+<body>
+  <script>
+ 
+    var nazwisko_bis = "Biskupski";
+    var imie_bis = "Fabian";
+ 
+    var kon_bis = (nazwisko_bis.length % 4) + 10;
+    var czcionka_bis = (nazwisko_bis.length % 3) + 40;
+
+   
+    document.write("ilość wykonania pętli = " + kon_bis + "<br>");
+    document.write("wielkość liter = " + czcionka_bis + "px<br><br>");
+
+
+    for (var i_bis = 1; i_bis <= kon_bis; i_bis++) {
+      if (i_bis % 2 === 0) {
+      
+        document.write("<span style='font-size:" + czcionka_bis + "px;'>" + imie_bis + "</span><br>");
+      } else {
+      
+        document.write("<span style='font-size:" + czcionka_bis + "px;'>" + nazwisko_bis + "</span><br>");
+      }
+    }
+  </script>
+</body>
+</html>
