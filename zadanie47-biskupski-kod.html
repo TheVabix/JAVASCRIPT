@@ -1,0 +1,39 @@
+<textarea rows="40" cols="80">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Sprawdzenie trójkąta – Biskupski</title>
+</head>
+<body>
+  <script>
+    var a_bis, b_bis, c_bis;
+
+    do {
+      var inputA = prompt("Podaj bok a trójkąta:", "");
+      a_bis = parseFloat(inputA);
+
+      var inputB = prompt("Podaj bok b trójkąta:", "");
+      b_bis = parseFloat(inputB);
+
+      var inputC = prompt("Podaj bok c trójkąta:", "");
+      c_bis = parseFloat(inputC);
+
+      var warunek = 
+          a_bis > 0 && b_bis > 0 && c_bis > 0 &&
+          (a_bis + b_bis > c_bis) &&
+          (a_bis + c_bis > b_bis) &&
+          (b_bis + c_bis > a_bis);
+
+      if (!warunek) {
+        alert("Błędne dane! Podane boki nie tworzą trójkąta. Spróbuj ponownie.");
+      }
+    } while (!warunek);
+
+    document.write("<h2 style='color:green;'>Prawidłowe boki trójkąta:</h2>");
+    document.write("a = " + a_bis + "<br>");
+    document.write("b = " + b_bis + "<br>");
+    document.write("c = " + c_bis + "<br>");
+  </script>
+</body>
+</html>
