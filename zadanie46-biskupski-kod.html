@@ -1,0 +1,31 @@
+<textarea rows="40" cols="80">
+<!DOCTYPE html>   
+<html lang="pl">
+<head>    
+  <title>Sprawdzenie danych – Biskupski</title>    
+  <meta charset="utf-8">   
+</head>  
+<body> 
+<div style="color:red; font-size:50px;"> 
+<script>
+  let h_bis, a_bis;
+
+  do {
+    let liczba1 = prompt("Podaj wysokość:", "");
+    h_bis = parseFloat(liczba1);
+  } while (h_bis <= 0 || isNaN(h_bis));
+
+  do {
+    let liczba2 = prompt("Podaj podstawę:", "");
+    a_bis = parseFloat(liczba2);
+  } while (a_bis <= 0 || isNaN(a_bis));
+
+
+  let Pole = (a_bis * h_bis) / 2;
+
+
+  document.write("Pole = " + Pole.toFixed(2) + " cm²<br>");
+</script> 
+</div> 
+</body> 
+</html>
