@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Prostokąt z gwiazdek - _bis</title>
+  <style>
+    body {
+      font-family: monospace;
+      margin: 20px;
+    }
+    pre {
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prostokąt z gwiazdek </h1>
+  <pre id="output"></pre>
+  
+  <script>
+
+    var liczbaLiterNazwiska_bis = 9;
+    var liczbaLiterImienia_bis = 6;
+    
+   
+    var a_bis = (liczbaLiterNazwiska_bis % 4) + 5;
+    var b_bis = (liczbaLiterImienia_bis % 6) + 20;
+    
+    var rectangle = "";
+    
+
+    for (var i = 0; i < b_bis; i++) {
+      rectangle += "*";
+    }
+    rectangle += "\n";
+    
+  
+    for (var j = 0; j < a_bis - 2; j++) {
+      rectangle += "*";
+      for (var k = 0; k < b_bis - 2; k++) {
+        rectangle += " ";
+      }
+      rectangle += "*\n"; 
+    }
+    
+   
+    if (a_bis > 1) {
+      for (var i = 0; i < b_bis; i++) {
+        rectangle += "*";
+      }
+    }
+    document.getElementById("output").textContent = rectangle;
+  </script>
+</body>
+</html>
