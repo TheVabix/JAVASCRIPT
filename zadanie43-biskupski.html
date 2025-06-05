@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Liczby parzyste</title>
+</head>
+<body>
+  <script>
+    var kon_bis = prompt("Podaj liczbę końcową zakresu:");
+
+    kon_bis = parseInt(kon_bis);
+
+   
+    if (!isNaN(kon_bis) && kon_bis >= 2) {
+      document.write("<h2>Liczby parzyste od 2 do " + kon_bis + ":</h2>");
+      for (var i_bis = 2; i_bis <= kon_bis; i_bis++) {
+        if (i_bis % 2 === 0) {
+          document.write(i_bis + "<br>");
+        }
+      }
+    } else {
+      document.write("Podano nieprawidłową liczbę.");
+    }
+  </script>
+</body>
+</html>
