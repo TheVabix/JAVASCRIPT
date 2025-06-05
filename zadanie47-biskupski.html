@@ -2,40 +2,37 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Kod źródłowy – Zadanie 47</title>
+  <title>Sprawdzenie trójkąta – Biskupski</title>
 </head>
 <body>
-  <h2>Kod programu – Biskupski Zadanie 47</h2>
-  <pre style="background-color:#f0f0f0; padding:10px; border:1px solid #ccc;">
-&lt;script&gt;
-  var a_bis, b_bis, c_bis;
+  <script>
+    var a_bis, b_bis, c_bis;
 
-  do {
-    var inputA = prompt("Podaj bok a trójkąta:", "");
-    a_bis = parseFloat(inputA);
+    do {
+      var inputA = prompt("Podaj bok a trójkąta:", "");
+      a_bis = parseFloat(inputA);
 
-    var inputB = prompt("Podaj bok b trójkąta:", "");
-    b_bis = parseFloat(inputB);
+      var inputB = prompt("Podaj bok b trójkąta:", "");
+      b_bis = parseFloat(inputB);
 
-    var inputC = prompt("Podaj bok c trójkąta:", "");
-    c_bis = parseFloat(inputC);
+      var inputC = prompt("Podaj bok c trójkąta:", "");
+      c_bis = parseFloat(inputC);
 
-    var warunek = 
-        a_bis &gt; 0 &amp;&amp; b_bis &gt; 0 &amp;&amp; c_bis &gt; 0 &amp;&amp;
-        (a_bis + b_bis &gt; c_bis) &amp;&amp;
-        (a_bis + c_bis &gt; b_bis) &amp;&amp;
-        (b_bis + c_bis &gt; a_bis);
+      var warunek = 
+          a_bis > 0 && b_bis > 0 && c_bis > 0 &&
+          (a_bis + b_bis > c_bis) &&
+          (a_bis + c_bis > b_bis) &&
+          (b_bis + c_bis > a_bis);
 
-    if (!warunek) {
-      alert("Błędne dane! Podane boki nie tworzą trójkąta. Spróbuj ponownie.");
-    }
-  } while (!warunek);
+      if (!warunek) {
+        alert("Błędne dane! Podane boki nie tworzą trójkąta. Spróbuj ponownie.");
+      }
+    } while (!warunek);
 
-  document.write("&lt;h2 style='color:green;'&gt;Prawidłowe boki trójkąta:&lt;/h2&gt;");
-  document.write("a = " + a_bis + "&lt;br&gt;");
-  document.write("b = " + b_bis + "&lt;br&gt;");
-  document.write("c = " + c_bis + "&lt;br&gt;");
-&lt;/script&gt;
-  </pre>
+    document.write("<h2 style='color:green;'>Prawidłowe boki trójkąta:</h2>");
+    document.write("a = " + a_bis + "<br>");
+    document.write("b = " + b_bis + "<br>");
+    document.write("c = " + c_bis + "<br>");
+  </script>
 </body>
 </html>
